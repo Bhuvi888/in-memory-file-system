@@ -1,10 +1,11 @@
 package com.filesystem.model;
 
-
-
 public class FileNode extends Node {
-    public FileNode(String name,Directory parent){
-        super(name,parent);
+    private String content = "";
+
+    public FileNode(String name, Directory parent) {
+        super(name, parent);
+        this.permission = Permission.defaultFilePermission();
     }
 
     @Override
@@ -12,6 +13,11 @@ public class FileNode extends Node {
         return false;
     }
 
+    public String getContent() {
+        return content;
+    }
 
-
+    public void setContent(String content) {
+        this.content = content;
+    }
 }
